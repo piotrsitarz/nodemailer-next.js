@@ -21,13 +21,14 @@ but you can easily change it and use the configuration with your custom domain i
 const transporter = nodemailer.createTransport({
     host: 'something.yourdomain.com',
     port: 465,
-    secure: true, // true for 465, false for other ports
+    secure: true
     auth: {
       user: 'username@yourdomain.com', // your domain email address
       pass: 'password' // your password
     }
   });
 ```
+> And now you are ready to go :rocket: :rocket: :rocket:
 
 ## Getting Started
 
