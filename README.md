@@ -1,5 +1,34 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## About Project :eyes:
+POC for sending email messages using the [**Nodemailer**](https://nodemailer.com/about/) module for Node.js.
+The project by default uses **gmail** as a service and **OAuth** security which has been configured in the [Google Cloud Platform](https://console.cloud.google.com/home) as can be seen in the transporter object:
+```sh
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      type: "OAuth2",
+      user: process.env.MAIL_USERNAME,
+      pass: process.env.MAIL_PASSWORD,
+      clientId: process.env.OAUTH_CLIENTID,
+      clientSecret: process.env.OAUTH_CLIENT_SECRET,
+      refreshToken: process.env.OAUTH_REFRESH_TOKEN,
+    },
+  });
+```
+but you can easily change it and use the configuration with your custom domain info(host, port, user and password):
+```sh
+const transporter = nodemailer.createTransport({
+    host: 'something.yourdomain.com',
+    port: 465,
+    secure: true, // true for 465, false for other ports
+    auth: {
+      user: 'username@yourdomain.com', // your domain email address
+      pass: 'password' // your password
+    }
+  });
+```
+
 ## Getting Started
 
 First, run the development server:
