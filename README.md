@@ -16,7 +16,7 @@ The project by default uses **gmail** as a service and **OAuth** security which 
     },
   });
 ```
-but you can easily change it and use the configuration with your custom domain info(host, port, user and password):
+but you can easily change it and use the [configuration](https://nodemailer.com/smtp/) with your custom domain info(host, port, user and password):
 ```sh
 const transporter = nodemailer.createTransport({
     host: 'something.yourdomain.com',
